@@ -1,0 +1,77 @@
+body {
+    background-color: #d2d2d2;
+    background-image: url(img/nuages.png);
+}
+.chat {
+    position: absolute;
+    bottom: 1px;
+    left: calc(50% - 200px);
+    height: 200px;
+    width: 400px;
+    background: url(img/chat_sprite.png) 0 0 no-repeat;
+    -webkit-animation: walk 1s infinite steps(12);
+    animation: walk 1s infinite steps(12);
+}
+
+@-webkit-keyframes walk{
+    100% { background-position: 0 -2400px;}
+}
+
+@keyframes walk{
+    100% { background-position: 0 -2400px;}
+}
+
+.foreground, .midground, .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+}
+
+.foreground {
+    background-image: url(img/herbe_foreground.png);
+    z-index: 5;
+    -webkit-animation: parallax_fg 10s infinite linear;
+    animation: parallax_fg 10s infinite linear;
+}
+
+.midground {
+    background-image: url(img/herbe_midground.png);
+    z-index: 4;
+    -webkit-animation: parallax_mg 20s infinite linear;
+    animation: parallax_mg 20s infinite linear;
+}
+
+.background {
+    background-image: url(img/montagne5.png), url(img/montagne4.png), url(img/montagne3.png), url(img/montagne2.png), url(img/montagne1.png);
+    z-index: 3;
+    -webkit-animation: parallax_bg 40s infinite linear;
+    animation: parallax_bg 40s infinite linear;
+}
+
+@-webkit-keyframes parallax_fg {
+    100% { background-position: 3584px 100%;}
+}
+
+@keyframes parallax_fg {
+    100% { background-position: 3584px 100%;}
+}
+
+@-webkit-keyframes parallax_mg {
+    0% { background-position: -3000px 100%;}
+}
+
+@keyframes parallax_mg {
+    0% { background-position: -3000px 100%;}
+}
+
+@-webkit-keyframes parallax_bg {
+    0% { background-position: -2400px 100%, -2000px 100%, -1800px 100%, -1600px 100%, -1200px 100%;}
+}
+
+@keyframes parallax_bg {
+    0% { background-position: -2400px 100%, -2000px 100%, -1800px 100%, -1600px 100%, -1200px 100%;}
+}
